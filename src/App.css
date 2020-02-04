@@ -1,6 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Kodchasan&display=swap');
+
+
 
 .App {
   text-align: center;
+  font-family: 'Kodchasan', sans-serif;
+  background-image: url(https://images.unsplash.com/photo-1568137223715-939ee931710e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
 }
 
 .App-header {
@@ -14,6 +19,14 @@
   color: white;
 }
 
+header{
+  background-position: 0% 26%;
+  color: antiquewhite;
+  background-image: url(https://images.unsplash.com/photo-1568137225575-9f082ee9bb67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+  padding: 3%;
+  box-shadow: 0px 0px 45px #666;
+}
+
 .App-link {
   color: #61dafb;
 }
@@ -21,6 +34,7 @@
 #cosmoCardFrontContainer{
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 
@@ -31,16 +45,83 @@ margin: 50px;
 img{
   width: 200px;
   height: 225px;
-  border-radius: 30%;
+  border-radius: 15%;
+  box-shadow: 0px 0px 45px #666;
 }
 
-#cosmoCardFront{
-  padding: 5%;
+
+.flip-card {
+  background-color: transparent;
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%;
 }
-#cosmoCardback{
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:active .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.cosmoCardFront{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.cosmoCardBack{
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+.cosmoCardFrontContainer{
   padding: 5%;
 }
 
-#cosmoCardFront :hover{
-  box-shadow: 0px 0px 50px #888888;
+.cosmoCardBackContainer{
+  border-radius: 25%;
+  background-color: #997;
+  width: 90%;
+  padding: 5%;
+  height: 100%;
+  transform: rotateY(180deg);
+  box-shadow: 0px 0px 45px #666;
+}
+
+input{
+  width: 14rem;
+  height: 2rem;
+  box-shadow: 0px 0px 45px #666;
+}
+
+p{
+  padding: 0px;
+  font-size: 0.6rem;
+}
+
+footer{
+  background-image: url(https://images.unsplash.com/photo-1568137225575-9f082ee9bb67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+}
+
+#youDied{
+  width: 100px;
+  height: 100px;
+  box-shadow: none;
+}
+
+body{
+  background-image: url(https://images.unsplash.com/photo-1568137225575-9f082ee9bb67?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
 }

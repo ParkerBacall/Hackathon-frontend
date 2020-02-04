@@ -1,10 +1,16 @@
 import React from 'react'
+import Missions from './Missions'
 
 export default function CosmonautCardBack({cosmonaut}) {
+    
+    const showMissions = cosmonaut.missions.map(mission => {
+        return (<Missions mission={mission} />)
+    })
+
     return (
-        <div id='cosmoCardback'>
+        <div class='cosmoCardBack'>
         <h4>{cosmonaut.first_name} {cosmonaut.last_name}</h4>
-        <h5>{cosmonaut.died_in_space === 1 ? "Died in space" : null}</h5>
+        {cosmonaut.died_in_space === 1 ?<> <img id='youDied' src='dead.png' /> <p>Died in Space</p> </>: showMissions}
         </div>
     )
 }

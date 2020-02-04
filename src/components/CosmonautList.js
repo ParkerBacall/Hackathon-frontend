@@ -1,6 +1,5 @@
 import React from 'react'
 import CosmonautCardFront from './CosmonautCardFront'
-import CosmonautCardBack from './CosmonautCardBack'
 
 export default function CosmonautList({cosmonauts}) {
 
